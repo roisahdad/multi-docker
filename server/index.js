@@ -30,7 +30,7 @@ const { Pool } = require('pg');
 // beginning of this file
 const pgClient = new Pool({
     user: keys.pgUser,
-    host: keys.pghHost,
+    host: keys.pgHost,
     database: keys.pgDatabase,
     password: keys.pgPassword,
     port: keys.pgPort
