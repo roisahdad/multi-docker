@@ -1,17 +1,11 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-//Import BrowserRouter allowing for navigation between "OtherPage.js" and "Fib.js"
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-//Import the "OtherPage.js" and "Fib.js" components
 import OtherPage from './OtherPage';
 import Fib from './Fib';
 
 function App() {
-//Wrap existing write-up with a new "Router" component defining:
-// place a link tab to the "/" route called "Home"
-// place a link tag to "Other Page"
-// routes to "Fib" and "Otherpage"
   return (
     <Router>
       <div className="App">
