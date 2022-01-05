@@ -1,8 +1,33 @@
 {
     "AWSEBDockerrunVersion": 2,
     "containerDefinitions": [{
-        "name": "client",
-        "image": "roisahdad/multi-client"
-        "hostname": "client"
-    }]
+            "name": "client",
+            "image": "roisahdad/multi-client",
+            "hostname": "client",
+            "essential": "false"
+        },
+        {
+            "name": "server",
+            "image": "roisahdad/multi-server",
+            "hostname": "api",
+            "essential": "false"
+        },
+        {
+            "name": "worker",
+            "image": "roisahdad/multi-worker",
+            "hostname": "worker",
+            "essential": "false"
+        },
+        {
+            "name": "nginx",
+            "image": "roisahdad/multi-nginx",
+            "hostname": "nginx",
+            "essential": "true",
+            "portMappings": [{
+                "hostPort": 80,
+                "containerPort": 80
+            }],
+            "links": ["client", "server"]
+        }
+    ]
 }
